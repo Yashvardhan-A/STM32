@@ -32,31 +32,30 @@
  ****************************************************************************************************************************/
 void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi) {
 
-	switch (pGPIOx) {
-	case GPIOA:
-		EorDi ? GPIOA_PCLK_EN() : GPIOA_PCLK_DI();
 
-	case GPIOB:
-			EorDi ? GPIOB_PCLK_EN() : GPIOB_PCLK_DI();
+	if(GPIOA == pGPIOx)
+		EnorDi ? GPIOA_PCLK_EN() : GPIOA_PCLK_DI();
 
-	case GPIOC:
-			EorDi ? GPIOC_PCLK_EN() : GPIOC_PCLK_DI();
+	else if(GPIOB == pGPIOx)
+		EnorDi ? GPIOB_PCLK_EN() : GPIOB_PCLK_DI();
 
-	case GPIOD:
-			EorDi ? GPIOD_PCLK_EN() : GPIOD_PCLK_DI();
+	else if(GPIOC == pGPIOx)
+		EnorDi ? GPIOC_PCLK_EN() : GPIOC_PCLK_DI();
 
-	case GPIOE:
-			EorDi ? GPIOE_PCLK_EN() : GPIOE_PCLK_DI();
+	else if(GPIOD == pGPIOx)
+		EnorDi ? GPIOD_PCLK_EN() : GPIOD_PCLK_DI();
 
-	case GPIOF:
-			EorDi ? GPIOF_PCLK_EN() : GPIOF_PCLK_DI();
+	else if(GPIOE == pGPIOx)
+		EnorDi ? GPIOE_PCLK_EN() : GPIOE_PCLK_DI();
 
-	case GPIOG:
-				EorDi ? GPIOG_PCLK_EN() : GPIOG_PCLK_DI();
+	else if(GPIOF == pGPIOx)
+		EnorDi ? GPIOF_PCLK_EN() : GPIOF_PCLK_DI();
 
-	case GPIOH:
-				EorDi ? GPIOH_PCLK_EN() : GPIOH_PCLK_DI();
-	}
+	else if(GPIOG == pGPIOx)
+		EnorDi ? GPIOG_PCLK_EN() : GPIOG_PCLK_DI();
+
+	else if(GPIOH == pGPIOx)
+		EnorDi ? GPIOH_PCLK_EN() : GPIOH_PCLK_DI();
 
 }
 
