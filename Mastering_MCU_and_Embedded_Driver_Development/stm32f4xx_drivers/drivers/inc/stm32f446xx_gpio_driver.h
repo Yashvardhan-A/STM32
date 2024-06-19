@@ -34,6 +34,18 @@ typedef struct {
 
 }GPIO_Handle_t;
 
+/*
+ * GPIO modes
+ */
+#define GPIO_MODE_IN			0
+#define GPIO_MODE_OUT			1
+#define GPIO_MODE_ALTFN			2
+#define GPIO_MODE_ANALOG		3
+#define GPIO_MODE_IT_FT			4	// Used for interrupt GPIO falling edge
+#define GPIO_MODE_IT_RT			5	// Used for interrupt GPIO rising edge
+#define GPIO_MODE_IT_RFT		6	// Used for interrupt GPIO rising and falling edge
+
+
 
 /****************************************************************
  * 						API for this driver
